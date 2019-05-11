@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B06DB0C6-9E8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.FunctionApp", "src\Samples.FunctionApp\Samples.FunctionApp.csproj", "{7027330B-FF83-40CD-899B-BF60E3A14B3E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D8FF2EB8-6970-45D3-8A5F-A7C95196BF2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.DotNet.Test", "tests\Sample.DotNet.Test\Sample.DotNet.Test.csproj", "{3DA91F3C-A419-4930-9EE5-60227EDE060B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{7027330B-FF83-40CD-899B-BF60E3A14B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7027330B-FF83-40CD-899B-BF60E3A14B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7027330B-FF83-40CD-899B-BF60E3A14B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA91F3C-A419-4930-9EE5-60227EDE060B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA91F3C-A419-4930-9EE5-60227EDE060B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA91F3C-A419-4930-9EE5-60227EDE060B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA91F3C-A419-4930-9EE5-60227EDE060B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7027330B-FF83-40CD-899B-BF60E3A14B3E} = {B06DB0C6-9E84-4480-A1B4-9C711A62F94F}
+		{3DA91F3C-A419-4930-9EE5-60227EDE060B} = {D8FF2EB8-6970-45D3-8A5F-A7C95196BF2B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5D8698F8-7C89-4629-8FB1-8074E8B103C7}
