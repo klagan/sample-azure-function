@@ -10,7 +10,7 @@ namespace Samples.FunctionApp
     public static class TopicFunction
     {
         [FunctionName("TopicFunction")]
-        public static async Task RunAsync([ServiceBusTrigger("my-in-topic", "sub1", Connection = "ConnectionStrings:myServiceBusAdmin")]
+        public static async Task RunAsync([ServiceBusTrigger("my-in-topic", "sub1", Connection = "myServiceBusAdmin")]
         Message messageIn, ILogger log, MessageReceiver messageReceiver, string lockToken)
         {
             log.LogInformation($"C# ServiceBus topic trigger function processed message: {messageIn}");
@@ -36,7 +36,7 @@ namespace Samples.FunctionApp
             {
                 await messageReceiver.DeadLetterAsync(lockToken, deadLetterReason: "Bad request", deadLetterErrorDescription: e.ToString());
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 await messageReceiver.AbandonAsync(lockToken);
             }

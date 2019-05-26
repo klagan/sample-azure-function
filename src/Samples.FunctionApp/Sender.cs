@@ -11,7 +11,7 @@
         const string TopicName = "my-out-topic";
         const string SubscriptionName = "{Subscription Name}";
         static ITopicClient topicClient;
-        static ISubscriptionClient subscriptionClient;
+        //static ISubscriptionClient subscriptionClient;
 
         // Use this Handler to look at the exceptions received on the MessagePump
         static Task ExceptionReceivedHandler(ExceptionReceivedEventArgs exceptionReceivedEventArgs)
