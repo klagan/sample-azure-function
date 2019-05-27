@@ -5,7 +5,9 @@ namespace Samples.FunctionApp
     using Microsoft.Azure.WebJobs;
     using Microsoft.Extensions.Logging;
     using System;
+    using System.Text;
     using System.Threading.Tasks;
+    using System.Transactions;
 
     public static class TopicFunction
     {
@@ -15,30 +17,46 @@ namespace Samples.FunctionApp
         {
             log.LogInformation($"C# ServiceBus topic trigger function processed message: {messageIn}");
 
-            try
+            using (var scope = new TransactionScope(TransactionScopeOption.RequiresNew, TransactionScopeAsyncFlowOption.Enabled))
             {
-                if (messageIn.GetHashCode() % 3 == 0)
-                {
-                    await Sender.MainAsync();
+                //var messageSender = new MessageSender(messageReceiver.ServiceBusConnection, "queue-out", "queue-in");
 
-                    await messageReceiver.CompleteAsync(lockToken);
-                }
-                else if (messageIn.GetHashCode() % 2 == 0)
+                //var outgoingMessage = new Message(Encoding.UTF8.GetBytes($"Processed message with ID {messageIn.MessageId}"));
+
+                //log.LogInformation("Sending a message out");
+                //await messageSender.SendAsync(outgoingMessage);
+                //log.LogInformation("Done");
+
+                //await messageReceiver.CompleteAsync(messageIn.SystemProperties.LockToken);
+
+
+                try
                 {
-                    throw new NotSupportedException();
+                    if (messageIn.GetHashCode() % 3 == 0)
+                    {
+                        await Sender.MainAsync();
+
+                        await messageReceiver.CompleteAsync(lockToken);
+                    }
+                    else if (messageIn.GetHashCode() % 2 == 0)
+                    {
+                        throw new NotSupportedException();
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
                 }
-                else
+                catch (NotSupportedException e)
                 {
-                    throw new Exception();
+                    await messageReceiver.DeadLetterAsync(lockToken, deadLetterReason: "Bad request", deadLetterErrorDescription: e.ToString());
                 }
-            }
-            catch (NotSupportedException e)
-            {
-                await messageReceiver.DeadLetterAsync(lockToken, deadLetterReason: "Bad request", deadLetterErrorDescription: e.ToString());
-            }
-            catch (Exception)
-            {
-                await messageReceiver.AbandonAsync(lockToken);
+                catch (Exception)
+                {
+                    await messageReceiver.AbandonAsync(lockToken);
+                }
+
+                scope.Complete();
             }
         }
     }
