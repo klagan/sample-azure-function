@@ -5,7 +5,6 @@ namespace Samples.FunctionApp
     using Microsoft.Azure.WebJobs;
     using Microsoft.Extensions.Logging;
     using System;
-    using System.Text;
     using System.Threading.Tasks;
     using System.Transactions;
 
