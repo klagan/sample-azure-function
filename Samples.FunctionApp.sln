@@ -9,7 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.FunctionApp", "src\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D8FF2EB8-6970-45D3-8A5F-A7C95196BF2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.DotNet.Test", "tests\Sample.DotNet.Test\Sample.DotNet.Test.csproj", "{3DA91F3C-A419-4930-9EE5-60227EDE060B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.DotNet.Test", "tests\Sample.DotNet.Test\Sample.DotNet.Test.csproj", "{3DA91F3C-A419-4930-9EE5-60227EDE060B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{96931B4F-9AED-454D-8160-9000B611A5B4}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
