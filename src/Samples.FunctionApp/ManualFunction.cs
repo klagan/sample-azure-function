@@ -17,7 +17,7 @@ namespace Samples.FunctionApp
         {
             _testService = serviceImpl;
         }
-
+        [Disable]
         [FunctionName("ManualFunction")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]

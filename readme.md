@@ -1,4 +1,4 @@
-## Function Application Samples
+﻿## Function Application Samples
 
 ## Getting Started
 
@@ -21,3 +21,5 @@ The configuration file required by the application should resemble the following
 ```
 
 `MyFunctionStartup.cs` - Enables dependency injection
+
+> On Apple Mac you require an azure storage key as there is not local development storage emulator available.

@@ -10,6 +10,7 @@ namespace Samples.FunctionApp
 
     public static class TopicFunction
     {
+        [Disable]
         [FunctionName("TopicFunction")]
         public static async Task RunAsync([ServiceBusTrigger("my-in-topic", "sub1", Connection = "myServiceBusAdmin")]
         Message messageIn, ILogger log, MessageReceiver messageReceiver, string lockToken)
