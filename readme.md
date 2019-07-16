@@ -11,7 +11,8 @@ The configuration file required by the application should resemble the following
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-    "myServiceBusAdmin": "Endpoint=sb://XXXXX"
+    "myServiceBusAdmin": "Endpoint=sb://XXXXX",
+    "mySection__mySubSection__myKey": "myValue"
   },
   "ConnectionStrings": {
     "myServiceBusWrite": "Endpoint=sb://XXXXX",
