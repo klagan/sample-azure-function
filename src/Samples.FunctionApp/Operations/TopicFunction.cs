@@ -1,13 +1,14 @@
-namespace Samples.FunctionApp
-{
-    using Microsoft.Azure.ServiceBus;
-    using Microsoft.Azure.ServiceBus.Core;
-    using Microsoft.Azure.WebJobs;
-    using Microsoft.Extensions.Logging;
-    using System;
-    using System.Threading.Tasks;
-    using System.Transactions;
+using System;
+using System.Threading.Tasks;
+using System.Transactions;
+using Microsoft.Azure.ServiceBus;
+using Microsoft.Azure.ServiceBus.Core;
+using Microsoft.Azure.WebJobs;
+using Microsoft.Extensions.Logging;
+using Samples.FunctionApp.Services;
 
+namespace Samples.FunctionApp.Operations
+{
     public static class TopicFunction
     {
         [Disable]

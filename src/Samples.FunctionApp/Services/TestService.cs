@@ -1,16 +1,18 @@
-﻿[assembly: Microsoft.Azure.WebJobs.Hosting.WebJobsStartup(typeof(Samples.FunctionApp.MyFunctionStartup))]
+﻿using System;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.ServiceBus;
+using Newtonsoft.Json;
+using Samples.FunctionApp.Contracts;
+using Samples.FunctionApp.Operations;
 
-namespace Samples.FunctionApp
+[assembly: Microsoft.Azure.WebJobs.Hosting.WebJobsStartup(typeof(MyFunctionStartup))]
+
+namespace Samples.FunctionApp.Services
 {
-    using Microsoft.AspNetCore.Http;
-    using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Azure.ServiceBus;
-    using Newtonsoft.Json;
-    using System;
-    using System.IO;
-    using System.Text;
-    using System.Threading.Tasks;
-
     public class TestService : ITestService
     {
         private ITopicClient _topicClient;

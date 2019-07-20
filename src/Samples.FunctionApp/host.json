@@ -1,4 +1,4 @@
-{
+﻿{
   "version": "2.0",
   "extensions": {
     "serviceBus": {
@@ -8,6 +8,18 @@
         "maxConcurrentCalls": 32,
         "maxAutoRenewDuration": "05:00:00"
       }
+    }
+  },
+  "logging": {
+    "fileLoggingMode": "always",
+    "logLevel": {
+      "default": "Information",
+      "Host.Results": "Information",
+      "Function": "Information",
+      "Host.Aggregator": "Information"
+    },
+  "console" : {
+    "isEnabled" : true
     }
   }
 }

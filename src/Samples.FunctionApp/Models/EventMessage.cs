@@ -1,9 +1,9 @@
-﻿namespace Samples.FunctionApp
-{
-    using Microsoft.Azure.ServiceBus;
-    using Newtonsoft.Json;
-    using System.Text;
+﻿using System.Text;
+using Microsoft.Azure.ServiceBus;
+using Newtonsoft.Json;
 
+namespace Samples.FunctionApp.Models
+{
     public class EventMessage<T> : Message where T : class
     {
         public EventMessage(T payload)

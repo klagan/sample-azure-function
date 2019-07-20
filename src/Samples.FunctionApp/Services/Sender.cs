@@ -1,10 +1,10 @@
-﻿namespace Samples.FunctionApp
-{
-    using Microsoft.Azure.ServiceBus;
-    using System;
-    using System.Text;
-    using System.Threading.Tasks;
+﻿using System;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Azure.ServiceBus;
 
+namespace Samples.FunctionApp.Services
+{
     public class Sender
     {
         const string ServiceBusConnectionString = "Endpoint=sb://play-bus.servicebus.windows.net/;SharedAccessKeyName=RootSender;SharedAccessKey=dDagZRtPDEE0FYhjG7uHvtKct8yr3SdQnEaUsDhdhro=";
